@@ -3,7 +3,7 @@ from models import db
 class Generation(db.Model):
     __tablename__ = "generations"
     id = db.Column(db.Integer, primary_key = True)
-    identifier = db.Column(db.String(50), nullable = False, unique=True)
+    name = db.Column(db.String(50), nullable = False, unique=True)
 
 def serialize(self):
     return {

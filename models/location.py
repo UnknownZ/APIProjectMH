@@ -3,6 +3,7 @@ from models import db
 class Location(db.Model):
     __tablename__ = "locations"
     id = db.Column(db.Integer, primary_key = True)
+    id_generation = db.Column(db.Integer, db.ForeignKey("generations.id"), nullable=False)
     name = db.Column(db.String(120), nullable = False, unique=True)
     generation = db.relationship("Generation", backref="generation")
 

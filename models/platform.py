@@ -1,9 +1,11 @@
 from models import db
+from datetime import datetime
 
 class Platform(db.Model):
     __tablename__ = "platforms"
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(120), nullable = False, unique=True)
+    launch_date = db.Column(db.DateTime(), default=datetime.now)
     code = db.Column(db.String(3), nullable = False, unique=True)
 
 def serialize(self):
