@@ -5,7 +5,7 @@ class Location(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     id_generation = db.Column(db.Integer, db.ForeignKey("generations.id"), nullable=False)
     name = db.Column(db.String(120), nullable = False, unique=True)
-    generation = db.relationship("Generation", backref="generation")
+    generation = db.relationship("Generation", backref="generations")
 
 def serialize(self):
     return {

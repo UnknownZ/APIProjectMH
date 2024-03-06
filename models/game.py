@@ -8,7 +8,7 @@ class Game(db.Model):
     id_generation = db.Column(db.Integer, db.ForeignKey("generations.id"), nullable=False)
     name = db.Column(db.String(120), nullable = False, unique=True)
     launch_date = db.Column(db.DateTime(), default=datetime.now)
-    generation = db.relationship("Generation", backref="generation")
+    generation = db.relationship("Generation", backref="generations")
 
 def serialize(self):
     return {

@@ -9,7 +9,7 @@ class Monster(db.Model):
     flagship = db.Column(db.Boolean, nullable = False)
     id_species = db.Column(db.Integer, db.ForeignKey('species.id'), nullable = False)
     species = db.relationship("Species", backref = "species")
-    generation = db.relationship("Generation", backref="generation")
+    generation = db.relationship("Generation", backref="generations")
 
 def serialize(self):
     return {

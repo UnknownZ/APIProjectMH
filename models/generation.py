@@ -8,7 +8,7 @@ class Generation(db.Model):
 def serialize(self):
     return {
         "id": self.id,
-        "identifier" : self.identifier,
+        "name" : self.name,
     }
 
 def save(self):
